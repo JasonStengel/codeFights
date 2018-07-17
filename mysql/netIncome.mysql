@@ -1,0 +1,10 @@
+/*creates a finacial report with net income for each finacial quarter in the report*/
+CREATE PROCEDURE netIncome()
+BEGIN
+	SELECT DATE_FORMAT(date, "%Y") as year, 
+           quarter(date) as quarter,
+           sum(profit) - sum(loss) as net_profit 
+    FROM accounting
+    GROUP BY quarter, year
+    ORDER BY year, quarter;
+END

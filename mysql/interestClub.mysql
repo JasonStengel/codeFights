@@ -1,0 +1,6 @@
+/* find people in the table possible interested in coming to the meeting*/
+CREATE PROCEDURE interestClub()
+    SELECT name
+    FROM people_interests
+    WHERE interests && interests LIKE '%reading%' AND interests && interests like '%drawing%'
+    ORDER BY name

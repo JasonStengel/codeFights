@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE orderOfSuccession()
+BEGIN
+	SELECT CASE WHEN gender = 'F' then CONCAT('Queen ',name)
+                else CONCAT('King ',name) END as name 
+    from Successors
+    order by birthday;
+END

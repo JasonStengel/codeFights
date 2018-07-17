@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+/*sorts all the projects contributors in alphabetical order*/ 
+CREATE PROCEDURE projectsTeam()
+BEGIN
+	SELECT DISTINCT (name) as name 
+    FROM projectLog
+    order by name;
+END

@@ -1,0 +1,7 @@
+/*Please add ; after each select statement*/
+/*gets the average population and the total from the countries in the table and creates a nerw one*/
+CREATE PROCEDURE countriesInfo()
+BEGIN
+	SELECT COUNT(*) as number, AVG(population) as average, sum(population) as total
+    FROM countries;
+END

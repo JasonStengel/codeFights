@@ -1,0 +1,11 @@
+/*
+return the sorted names of people who have sports and 
+reading in their list of hobbies
+*/
+CREATE PROCEDURE personalHobbies()
+BEGIN
+	SELECT name
+    FROM people_hobbies
+    where hobbies && hobbies like '%reading%' AND hobbies && hobbies like '%sports%'
+    order by name asc;
+END

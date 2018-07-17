@@ -1,0 +1,9 @@
+/*Please add ; after each select statement*/
+/*shows the scores of the players from 4th to 8th or below 3rd if there is less than 8*/
+CREATE PROCEDURE contestLeaderboard()
+BEGIN
+	SELECT  name
+    FROM leaderboard
+    order by score desc
+    LIMIT 5 OFFSET 3;    
+END

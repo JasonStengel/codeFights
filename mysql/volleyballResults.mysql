@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+/*sorts the results of volleyball teams around the world by wins in ascending order*/
+CREATE PROCEDURE volleyballResults()
+BEGIN
+	SELECT name, country, scored,missed, wins
+    FROM results
+    order by wins;
+END

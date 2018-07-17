@@ -1,0 +1,7 @@
+/*creats a list of who should be emailed*/
+CREATE PROCEDURE automaticNotifications()
+    SELECT email
+    FROM users
+    WHERE role NOT IN ("admin", "premium")
+
+    ORDER BY email;

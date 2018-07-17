@@ -1,0 +1,11 @@
+/*Please add ; after each select statement*/
+/*
+makes a list of possible suspects based on height and name being close to B. Gre?n
+*/
+CREATE PROCEDURE suspectsInvestigation()
+BEGIN
+	SELECT id, name, surname
+    FROM Suspect
+    Where height <= 170 and upper(name) LIKE 'b%' AND lower(surname) LIKE 'gre_n'
+    order by id;
+END

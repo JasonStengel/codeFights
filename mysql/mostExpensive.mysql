@@ -1,0 +1,12 @@
+/*Please add ; after each select statement*/
+/*sorts by the product with the lexicographically smallest 
+name on which the largest amount of money was spent.*/
+CREATE PROCEDURE mostExpensive()
+BEGIN
+    SELECT r.name
+    FROM(
+	SELECT name,(price * quantity) as total 
+    FROM Products
+    ORDER BY total desc, name asc limit 1
+    )r;
+END

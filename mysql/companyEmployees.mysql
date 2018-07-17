@@ -1,0 +1,9 @@
+/*combines two tables and sorts by department then name*/
+CREATE PROCEDURE companyEmployees()
+BEGIN
+	SELECT dep_name, emp_name
+    
+    FROM departments, employees
+    ORDER BY dep_name, emp_name;
+ 
+END

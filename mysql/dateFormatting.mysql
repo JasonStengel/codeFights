@@ -1,0 +1,8 @@
+/*takes in a date and formats it into proper ####-##-## format (date_iso)*/
+
+CREATE PROCEDURE dateFormatting()
+BEGIN
+	SELECT DATE_FORMAT(date_str, "%Y-%m-%d") as date_iso
+    FROM documents
+    ORDER BY id;
+END

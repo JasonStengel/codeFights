@@ -1,0 +1,16 @@
+/*Please add ; after each select statement*/
+/*
+makes a list of subscribers from newspapers containing daily in the name
+from the full_year and half_year tables
+*/
+CREATE PROCEDURE newsSubscribers()
+BEGIN
+	SELECT distinct subscriber
+    FROM full_year
+    where newspaper like '%daily%'
+    UNION 
+    SELECT distinct subscriber
+    FROM half_year
+    where newspaper like '%daily%'
+    order by subscriber asc;
+END

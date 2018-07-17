@@ -1,0 +1,18 @@
+/*Please add ; after each select statement*/
+/*query the name and id of all the students whose best grade comes from Option 3, 
+sorted based on the first 3 characters of their name. If the first 3 characters of 
+two names are the same, then the student with the lower ID value comes first.
+*/
+CREATE PROCEDURE gradeDistribution()
+BEGIN
+	SELECT r.name as Name, r.id as ID
+    FROM (
+        SELECT name, ID,
+        (Midterm1 * 25 / 100) + (Midterm2 * 25 / 100) + (Final * 50/100) as option_1,
+        (Midterm1 * 50 / 100) + (Midterm2 * 50 / 100) as option_2,
+        Final as option_3
+        FROM Grades    
+    ) r
+        WHERE r.option_1 > r.option_2 and r.option_3 > option_1
+    ORDER by LEFT(name, 3) asc, id ASC;
+END

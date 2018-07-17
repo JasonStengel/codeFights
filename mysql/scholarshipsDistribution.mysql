@@ -1,0 +1,13 @@
+/*finds all student in the candidates table who havent had detention*/
+CREATE PROCEDURE scholarshipsDistribution()
+BEGIN
+	SELECT candidate_id as student_id
+    FROM candidates
+
+    WHERE candidate_id NOT IN
+    (
+        SELECT student_id
+        FROM detentions
+    )
+    ORDER BY candidate_id asc;
+END

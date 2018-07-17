@@ -1,0 +1,7 @@
+/*Please add ; after each select statement*/
+/*displays data from database removing all entries that arent from africa*/
+CREATE PROCEDURE countriesSelection()
+BEGIN
+    SELECT name, continent, population FROM countries  
+    WHERE continent = 'Africa' order by name;
+END
